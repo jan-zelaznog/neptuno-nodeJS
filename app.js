@@ -7,7 +7,10 @@ var express = require('express'),
 mongoose.connect(process.env.MONGODB_URI)
 .then(()=>{ console.log ("Conexion a MongoDB exitosa")})
 .catch(()=>{console.log ("No se pudo establecer la conexión a MongoDB")});
-
+var isProduction = process.env.NODE_ENV === 'production';
+if (isProduction)
+	mongoose.set("debug", true);
+	
 require("./models/Producto");
 require("./models/Categoria");
 require("./models/Proveedor");
