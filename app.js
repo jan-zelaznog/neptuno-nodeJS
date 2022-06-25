@@ -4,7 +4,7 @@ var express = require('express'),
 	cors = require('cors'),
 	mongoose = require('mongoose');
 
-mongoose.connect("mongodb+srv://dbUser:x123y456@mycluster.vy4fd.mongodb.net/MyDB")
+mongoose.connect(process.env.MONGODB_URI)
 .then(()=>{ console.log ("Conexion a MongoDB exitosa")})
 .catch(()=>{console.log ("No se pudo establecer la conexión a MongoDB")});
 
@@ -30,6 +30,7 @@ app.use(function (req, res, next){
 });
 
 // Configurar donde se estará ejecutando el app
-var server = app.listen(3000, function (){
-	console.log ("App corriendo en el puerto 3000");
+let port = process.env.PORT;
+var server = app.listen(port, function (){
+	console.log ("App corriendo en el puerto " + port);
 })
