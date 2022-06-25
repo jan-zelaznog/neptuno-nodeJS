@@ -4,8 +4,7 @@ var express = require('express'),
 	cors = require('cors'),
 	mongoose = require('mongoose');
 
-
-mongoose.connect("mongodb+srv://db_user:x123y456@cluster0.pt7t5.mongodb.net/neptuno")
+mongoose.connect("mongodb+srv://dbUser:x123y456@mycluster.vy4fd.mongodb.net/MyDB")
 .then(()=>{ console.log ("Conexion a MongoDB exitosa")})
 .catch(()=>{console.log ("No se pudo establecer la conexión a MongoDB")});
 

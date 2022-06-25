@@ -8,7 +8,7 @@ function index (req, res, next) {
 }
 
 function find (req, res, next) {
-	Categoria.findOne({ idCategoria : req.params.id })
+	Categoria.findOne({ _id: req.params.id })
 	.then( categoria => {
 		res.send ( categoria );
 	}).catch (next);
@@ -22,7 +22,7 @@ function agregar (req, res, next) {
 }
 
 function eliminar (req, res, next) {
-	Categoria.findOneAndDelete( {idCategoria : req.params.id})
+	Categoria.findOneAndDelete( {_id : req.params.id})
 	.then (() => {
 		res.send ("La Categoria se eliminó correctamente");
 	})

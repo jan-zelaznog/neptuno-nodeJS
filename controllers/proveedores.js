@@ -8,7 +8,7 @@ function index (req, res, next) {
 }
 
 function find (req, res, next) {
-	Proveedor.findOne({ IdProveedor : req.params.id })
+	Proveedor.findOne({ _id : req.params.id })
 	.then( proveedor => {
 		res.send ( proveedor );
 	}).catch (next);
@@ -22,7 +22,7 @@ function agregar (req, res, next) {
 }
 
 function eliminar (req, res, next) {
-	Proveedor.findOneAndDelete( {IdProveedor: req.params.id})
+	Proveedor.findOneAndDelete( {_id: req.params.id})
 	.then (() => {
 		res.send ("El Proveedor se eliminó correctamente");
 	})

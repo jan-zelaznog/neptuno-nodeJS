@@ -2,10 +2,10 @@ const mongoose = require('mongoose');
 
 const CategoriaSchema = new mongoose.Schema (
 {
-	idCategoria : { type: Number, required: true },
+	_id: { type: Number, required: true },
     NombreCategoria: { type: String, required: true },
     Descripcion: { type: String, required: true }
-}, { collection: 'Categorias' }
+}, { collection: 'categorias' }
 );
 
 mongoose.model ("Categoria", CategoriaSchema);

@@ -1,7 +1,7 @@
 var router = require('express').Router();
 
 router.get ("/", (req, res, next) => {
-	res.send ("Bienvenido a Importadora Neptuno!!");
+	res.send ("<h1>Bienvenido a Importadora Neptuno</h1>");
 });
 
 router.use ("/productos", require("./productos"));
