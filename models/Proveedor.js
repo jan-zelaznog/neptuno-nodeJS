@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const ProveedorSchema = new mongoose.Schema (
 {
-	_id : { type: Number, required: true },
+	IdProveedor : { type: Number, required: true },
     NombreCompania: { type: String, required: true },
     NombreContacto: { type: String, required: true },
     CargoContacto: { type: String, required: true },
